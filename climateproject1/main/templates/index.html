@@ -1,0 +1,131 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Climate Data Input</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-5">Climate Reporter</h1>
+        <form action="{% url 'index' %}" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="city">Location</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="location"
+                    name="location"
+                    placeholder="Enter location"
+                    required  
+                    list="locations"
+                    
+                   
+                />
+            </div>
+            <div class="form-group">
+                <label for="temperature">Temperature (°C)</label>
+                <input
+                    type="number"
+                    step="0.1"
+                    class="form-control"
+                    id="temperature"
+                    name="temperature"
+                    placeholder="Enter here"
+                    required
+                />
+            <div class="form-group">
+                <label for="flood">flood </label>
+                <input
+                    type="number"
+                    step="0.1"
+                    class="form-control"
+                    id="flood"
+                    name="flood"
+                    placeholder="Enter here"
+                    required
+                />
+            </div>
+            <div class="form-group">
+                <label for="description">Drought</label>
+                <input
+                    class="form-control"
+                    id="drought"
+                    name="drought"
+                    rows="3"
+                    placeholder="enter here"
+                    required
+                ></input>
+            </div>
+            <div class="form-group">
+                <label for="social_disruption">social_disruption</label>
+                <input
+                    type="number"
+                    step="0.1"
+                    class="form-control"
+                    id="social_disruption"
+                    name="social_disruption"
+                    placeholder="Enter here"
+                    required
+                />
+            </div>
+            <div class="form-group">
+                <label for="indeginous_forecasting">Indeginous_forecasting</label>
+                <input
+                    type="number"
+                    step="0.1"
+                    class="form-control"
+                    id="indeginous_forecasting"
+                    name="indeginous_forecasting"
+                    placeholder="Enter "
+                    required
+                />
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+    </div>
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"
+    ></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"
+    ></script>
+    <script
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"
+    ></script>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyAMikr6e48PRltZmW35xEzTDlZ3vPID7IY",
+          authDomain: "climatereporter.firebaseapp.com",
+          projectId: "climatereporter",
+          storageBucket: "climatereporter.firebasestorage.app",
+          messagingSenderId: "290966160854",
+          appId: "1:290966160854:web:5fff5008d39677afd65077",
+          measurementId: "G-96V39QCEBT"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+      </script>
+</body>
+</html>

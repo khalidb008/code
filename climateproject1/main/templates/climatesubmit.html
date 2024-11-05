@@ -1,0 +1,46 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Climate data</title>
+</head>
+<body>
+    
+<p>Submitted data:</p>
+{% for climate in climatedata %}
+    <ul>
+        <li>City: {{ climate.location }}</li>
+        <li>Temperature: {{ climate.temperature }}</li>
+        <li>Rain(Flood): {{ climate.flood }}</li>
+        <li>Drought: {{ climate.drought }}</li>
+        <li>Social Disruption: {{ climate.social_disruption }}</li>
+        <li>Indeginous forecasting: {{ climate.indeginous_forecasting }}</li>
+    </ul>
+{% endfor %}
+
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyAMikr6e48PRltZmW35xEzTDlZ3vPID7IY",
+      authDomain: "climatereporter.firebaseapp.com",
+      projectId: "climatereporter",
+      storageBucket: "climatereporter.firebasestorage.app",
+      messagingSenderId: "290966160854",
+      appId: "1:290966160854:web:5fff5008d39677afd65077",
+      measurementId: "G-96V39QCEBT"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+</body>
+</html>
